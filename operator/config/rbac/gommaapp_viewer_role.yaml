@@ -1,0 +1,27 @@
+# permissions for end users to view gommaapps.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: gommaapp-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: operator
+    app.kubernetes.io/part-of: operator
+    app.kubernetes.io/managed-by: kustomize
+  name: gommaapp-viewer-role
+rules:
+- apiGroups:
+  - gomma.devlikebear.app
+  resources:
+  - gommaapps
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - gomma.devlikebear.app
+  resources:
+  - gommaapps/status
+  verbs:
+  - get

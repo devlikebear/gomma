@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- gomma_v1_gommaapp.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples
